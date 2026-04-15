@@ -1,6 +1,5 @@
 
 import re
-
 def check_password(password):
     # Проверка длины
     if len(password) < 8:
@@ -14,7 +13,7 @@ def check_password(password):
     if not re.search(r"[!@#$%^&*(),.?\":{}|<>]", password):
         return "Пароль должен содержать хотя бы один специальный символ"
 
-    return "Пароль надёжный ✅"
+    return "Пароль надёжный"
 
 
 # Пример использования
