@@ -1,2 +1,23 @@
-# -
-Эта программа проверяет длину, цифры, знаки пароля 
+
+import re
+
+def check_password(password):
+    # Проверка длины
+    if len(password) < 8:
+        return "Пароль слишком короткий (минимум 8 символов)"
+
+    # Проверка на наличие цифры
+    if not any(char.isdigit() for char in password):
+        return "Пароль должен содержать хотя бы одну цифру"
+
+    # Проверка на наличие специального символа
+    if not re.search(r"[!@#$%^&*(),.?\":{}|<>]", password):
+        return "Пароль должен содержать хотя бы один специальный символ"
+
+    return "Пароль надёжный ✅"
+
+
+# Пример использования
+user_password = input("Введите пароль: ")
+result = check_password(user_password)
+print(result)
